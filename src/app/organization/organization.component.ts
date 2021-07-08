@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Org } from './model/org';
+import { Org } from '../shared/model/org';
 
 @Component({
   selector: 'app-organization',
