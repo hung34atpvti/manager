@@ -7,7 +7,7 @@ export const environment = {
 };
 
 export const api_url = {
-  dev: 'http://localhost:9100'
+  dev: 'http://localhost:9200'
 }
 
 /*
