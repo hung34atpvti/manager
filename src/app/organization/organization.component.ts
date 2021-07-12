@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Pageable } from './../shared/model/pageable';
 import { Component, OnInit } from '@angular/core';
 import { Org } from '../shared/model/org';
@@ -9,14 +10,13 @@ import { OrgService } from '../shared/services/org/org.service';
   styleUrls: ['./organization.component.scss'],
 })
 export class OrganizationComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'name', 'address', 'description'];
   dataSource: Org[] = [];
   currentPage: number = 1;
   totalPage: number = 1;
   arrPageNumber: number[] = [];
   limit: number = 6;
 
-  constructor(private orgService: OrgService) {}
+  constructor(private orgService: OrgService, private router: Router) {}
 
   ngOnInit(): void {
     this.getOrg(0, this.limit);
@@ -32,7 +32,7 @@ export class OrganizationComponent implements OnInit {
     this.currentPage = page;
   }
 
-  getArrayPageNumber(totalPage: number) {
+  private getArrayPageNumber(totalPage: number) {
     this.arrPageNumber = [];
     for (let i = 0; i < this.totalPage; i++) {
       this.arrPageNumber.push(i);
@@ -41,5 +41,6 @@ export class OrganizationComponent implements OnInit {
 
   edit(id: number) {
     console.log(id);
+    this.router.navigate(['organization', id]);
   }
 }

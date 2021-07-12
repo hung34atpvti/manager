@@ -1,0 +1,30 @@
+<app-header></app-header>
+<button class="btn btn-secondary" (click)="back()"><- Back</button>
+<form [formGroup]="orgForm">
+
+    <div>
+      <label for="name">
+        Name
+      </label>
+      <input id="name" type="text" formControlName="name">
+    </div>
+  
+    <div>
+      <label for="address">
+        Address
+      </label>
+      <input id="address" type="text" formControlName="address">
+    </div>
+
+    <div>
+        <label for="description">
+            Description
+        </label>
+        <input id="description" type="text" formControlName="description">
+      </div>
+  
+    <button class="button" (click)="submit()">Save</button>
+  
+  </form>
+
+<app-footer></app-footer>
